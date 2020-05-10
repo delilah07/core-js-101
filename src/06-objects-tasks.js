@@ -23,7 +23,7 @@
 function Rectangle(width, height) {
   this.width = width;
   this.height = height;
-  Rectangle.prototype.getArea = function () {
+  this.getArea = function getArea() {
     return this.width * this.height;
   };
 }
