@@ -107,7 +107,8 @@ function angleBetweenClockHands(date) {
   const mins = d.getUTCMinutes();
   if (hours > 12) hours -= 12;
   const ang = Math.abs((hours * 60 + mins) * 0.5) - (mins * 6);
-  return Math.min(360 - ang * (Math.PI / 180), ang * (Math.PI / 180));
+  const rad = (ang * Math.PI) / 180;
+  return Math.abs(Math.min((2 * Math.PI) - rad, rad));
 }
 
 module.exports = {
